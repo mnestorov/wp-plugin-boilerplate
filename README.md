@@ -51,9 +51,9 @@ Any of the above tools should provide you with the proper tooling to internation
 
 Note that if you include your own classes, or third-party libraries, there are three locations in which said files may go:
 
-* `plugin-name/includes/functions.php` is where general functions, shortcodes, etc. of the site reside
-* `plugin-name/includes/classes` is where functionality shared between the admin area and the public area parts of the site reside
-* `plugin-name/assets/src/admin` is for all admin-specific scripts and styles
-* `plugin-name/assets/src/public` is for all public scripts and styles
+* `dx-plugin-name/includes/functions.php` is where general functions, shortcodes, etc. of the site reside
+* `dx-plugin-name/includes/classes` is where functionality shared between the admin area and the public area parts of the site reside
+* `dx-plugin-name/assets/src/admin` is for all admin-specific scripts and styles
+* `dx-plugin-name/assets/src/public` is for all public scripts and styles
 
 **Note:** We have the `Loader` class for registering the hooks.
