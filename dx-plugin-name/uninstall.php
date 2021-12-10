@@ -19,6 +19,7 @@
  * @since      1.0.0
  *
  * @package    Plugin_Name
+ * @author     DevriX <contact@devrix.com>
  */
 
 // If uninstall not called from WordPress, then exit.

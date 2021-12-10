@@ -1,4 +1,4 @@
-(function( $ ) {
+(function($) {
 	'use strict';
 
 	/**
@@ -27,4 +27,4 @@
 	 * single DOM-ready or window-load handler for a particular page.
 	 */
 
-})( jQuery );
+})(jQuery);

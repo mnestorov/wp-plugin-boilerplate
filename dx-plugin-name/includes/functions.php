@@ -12,7 +12,7 @@
  *
  * @package    Plugin_Name
  * @subpackage Plugin_Name/includes
- * @author     DevriX <office@devrix.com>
+ * @author     DevriX <contact@devrix.com>
  */
 
 if ( ! function_exists( 'dx_footag_shortcode' ) ) {

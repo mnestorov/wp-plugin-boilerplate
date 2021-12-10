@@ -9,7 +9,7 @@ The DX Plugin Boilerplate includes the following files:
 * `.gitignore` - used to exclude certain files from the repository.
 * `CHANGELOG.md` - the list of changes to the core project.
 * `README.md` - the file that you’re currently reading.
-* A `plugin-name` - directory that contains the source code
+* `dx-plugin-name` - directory that contains the source code
 
 ## Features
 
@@ -22,11 +22,11 @@ The DX Plugin Boilerplate includes the following files:
 
 The DX Plugin Boilerplate can be installed directly into your plugins folder "as-is". You will want to rename it and the classes inside of it to fit your needs. For example, if your plugin is named 'dx-example-plugin' then:
 
-* rename files from `plugin-name` to `dx-example-plugin`
-* change `plugin_name` to `dx-example-plugin`
-* change `plugin-name` to `dx-example-plugin`
-* change `Plugin_Name` to `Dx_Example_Plugin`
-* change `PLUGIN_NAME_` to `DX_EXAMPLE_PLUGIN_`
+* rename files from `dx-plugin-name` to `dx-example-plugin`
+* change `dx-plugin_name` to `dx-example-plugin`
+* change `dx-plugin-name` to `dx-example-plugin`
+* change `dx-Plugin_Name` to `Dx_Example_Plugin`
+* change `DX_PLUGIN_NAME_` to `DX_EXAMPLE_PLUGIN_`
 
 It's safe to activate the plugin at this point. Because the DX Plugin Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code.
 
@@ -45,7 +45,7 @@ Any of the above tools should provide you with the proper tooling to internation
 
 ### Licensing
 
-// TODO
+// @TODO
 
 ### Includes
 

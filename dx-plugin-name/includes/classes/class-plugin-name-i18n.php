@@ -11,7 +11,7 @@
  *
  * @package    Plugin_Name
  * @subpackage Plugin_Name/includes/classes
- * @author     DevriX <office@devrix.com>
+ * @author     DevriX <contact@devrix.com>
  */
 class Plugin_Name_I18n {
 

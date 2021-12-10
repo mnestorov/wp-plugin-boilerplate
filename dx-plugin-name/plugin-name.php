@@ -13,8 +13,8 @@
  * @package           Plugin_Name
  *
  * @wordpress-plugin
- * Plugin Name:       DX Plugin Boilerplate
- * Plugin URI:        http://devrix.com/plugin-name-uri/
+ * Plugin Name:       DX Plugin Name
+ * Plugin URI:        http://devrix.com
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            DevriX
@@ -41,7 +41,7 @@ define( 'PLUGIN_NAME_VERSION', '1.0.0' );
  * The code that runs during plugin activation.
  * This action is documented in includes/classes/class-plugin-name-activator.php
  */
-function activate_plugin_name() {
+function dx_activate_plugin_name() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-plugin-name-activator.php';
 	Plugin_Name_Activator::activate();
 }
@@ -50,13 +50,13 @@ function activate_plugin_name() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/classes/class-plugin-name-deactivator.php
  */
-function deactivate_plugin_name() {
+function dx_deactivate_plugin_name() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-plugin-name-deactivator.php';
 	Plugin_Name_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'dx_activate_plugin_name' );
+register_deactivation_hook( __FILE__, 'dx_deactivate_plugin_name' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,11 +73,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/classes/class-plugin-name.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
-
+function dx_run_plugin_name() {
 	$plugin = new Plugin_Name();
 	$plugin->run();
-
 }
 
-run_plugin_name();
+dx_run_plugin_name();
