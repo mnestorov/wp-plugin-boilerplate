@@ -65,6 +65,11 @@ register_deactivation_hook( __FILE__, 'dx_deactivate_plugin_name' );
 require plugin_dir_path( __FILE__ ) . 'includes/classes/class-plugin-name.php';
 
 /**
+ * The plugin functions file that is used to define general functions, shortcodes etc.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/functions.php';
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
