@@ -159,15 +159,15 @@ class Plugin_Name {
 		// Instantiate an object of Plugin_Name_Register_Post_Types class.
 		$plugin_cpt = new Plugin_Name_Register_Post_Types();
 
-		// Hook the function from Plugin_Name_Register_Post_Types class to an action or filter
-		$this->loader->add_action('init', $plugin_cpt, 'register_example_type');
+		// Hook the function from Plugin_Name_Register_Post_Types class to an action.
+		$this->loader->add_action( 'init', $plugin_cpt, 'register_business_type' );
 
 		// Instantiate an object of Plugin_Name_Register_Taxonomies class.
 		$plugin_taxonomies = new Plugin_Name_Register_Taxonomies();
 
-		// Hook the function from Plugin_Name_Register_Taxonomies class to an action or filter
-		$this->loader->add_action('init', $plugin_taxonomies, 'register_size_taxonomy');
-		$this->loader->add_action('init', $plugin_taxonomies, 'register_location_taxonomy');
+		// Hook the function from Plugin_Name_Register_Taxonomies class to an action.
+		$this->loader->add_action( 'init', $plugin_taxonomies, 'register_size_taxonomy' );
+		$this->loader->add_action( 'init', $plugin_taxonomies, 'register_location_taxonomy' );
 	}
 
 	/**
