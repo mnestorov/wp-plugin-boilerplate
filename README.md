@@ -187,20 +187,20 @@ class Plugin_Name_CPT {
 }
 ```
 
-2. Require our class within the `load_dependencies()` function. 
+2. Require our class within the `load_dependencies()` method in the **class-plugin-name.php**. 
 
 
 ```php
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-cpt.php';
 ```
 
-3. Instantiate an object of our class within the function `define_public_hooks()`.
+3. Instantiate an object of our class within the method `define_public_hooks()` in the **class-plugin-name.php**.
 
 ```php
 $plugin_cpt = new Plugin_Name_CPT();
 ```
 
-4. Lastly, hook the function from our class to an action or filter. We do this within `define_public_hooks()`.
+4. Lastly, hook the method from our class to an action or filter. We do this within `define_public_hooks()` in the **class-plugin-name.php**.
 
 ```php
 $this->loader->add_action( 'init', $plugin_cpt, 'dx_cpt_alert_function' );
