@@ -94,7 +94,7 @@ public function __construct() {
 Following the construct, we see the function `load_dependencies()` defined. Here is where the resource files for classes used by the plugin are called. The first class resource file we see being required here is `class-plugin-name-loader.php`.
 
 ```php
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-loader.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'classes/class-plugin-name-loader.php';
 ```
 
 **Example**
@@ -102,7 +102,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-nam
 If we have defined a class called **Plugin_Name_CPT** in the file **class-plugin-name-cpt.php** located in the includes directory of the plugin, we require it by adding this line to `load_dependencies()`:
 
 ```php
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-cpt.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'classes/class-plugin-name-cpt.php';
 ```
 
 **Note:** *Require any additional class files the plugin relies on within the `load_dependencies()` function*.
@@ -191,7 +191,7 @@ class Plugin_Name_CPT {
 
 
 ```php
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-cpt.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'classes/class-plugin-name-cpt.php';
 ```
 
 3. Instantiate an object of our class within the method `define_public_hooks()` in the **class-plugin-name.php**.

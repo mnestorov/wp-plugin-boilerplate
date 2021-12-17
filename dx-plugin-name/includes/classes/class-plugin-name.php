@@ -114,12 +114,12 @@ class Plugin_Name {
 		/**
 		 * The class responsible for registering all the custom post types that occur in the admin area.
 		 */
-		require_once plugin_dir_path(dirname(__FILE__)) . 'classes/class-plugin-name-register-post-types';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'classes/class-plugin-name-register-post-types.php';
 
 		/**
 		 * The class responsible for registering all the taxonomies that occur in the admin area.
 		 */
-		require_once plugin_dir_path(dirname(__FILE__)) . 'classes/class-plugin-name-register-taxonomies.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'classes/class-plugin-name-register-taxonomies.php';
 
 		// Run the loader
 		$this->loader = new Plugin_Name_Loader();
