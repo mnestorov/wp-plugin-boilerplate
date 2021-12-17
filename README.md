@@ -9,12 +9,12 @@ The DX Plugin Boilerplate includes the following files:
 - **.gitignore** - used to exclude certain files from the repository.
 - **CHANGELOG.md** - the list of changes to the core project.
 - **README.md** - the file that you’re currently reading.
-- **dx-plugin-name** - directory that contains the source code
+- **dx-plugin-name** - directory that contains the source code.
 
 ## Features
 
 - The DX Plugin Boilerplate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](https://developer.wordpress.org/coding-standards/), and [Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/php/).
-- All classes, functions, and variables are documented so that you know what you need to change.
+- All classes, methods, functions, and variables are documented so that you know what you need to change.
 - The DX Plugin Boilerplate uses a strict file organization scheme and that makes it easy to organize the files that compose the plugin.
 - The plugin includes a **'.pot'** file as a starting point for internationalization.
 
@@ -91,7 +91,7 @@ public function __construct() {
 }
 ```
 
-Following the construct, we see the function `load_dependencies()` defined. Here is where the resource files for classes used by the plugin are called. The first class resource file we see being required here is `class-plugin-name-loader.php`.
+Following the construct, we see the method `load_dependencies()` defined. Here is where the resource files for classes used by the plugin are called. The first class resource file we see being required here is `class-plugin-name-loader.php`.
 
 ```php
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-loader.php';
@@ -105,19 +105,19 @@ If we have defined a class called **Plugin_Name_CPT** in the file **class-plugin
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-cpt.php';
 ```
 
-**Note:** *Require any additional class files the plugin relies on within the `load_dependencies()` function*.
+**Note:** *Require any additional class files the plugin relies on within the `load_dependencies()` method*.
 
 So now, the first step is done.
 
 ---
 
-Continuing our examination, we see that at the end of this function, our earlier declared container called `$loader` is now defined as a **new object** of the class **Plugin_Name_Loader**, which it can do now because it was just required earlier in this function:
+Continuing our examination, we see that at the end of this method, our earlier declared container called `$loader` is now defined as a **new object** of the class **Plugin_Name_Loader**, which it can do now because it was just required earlier in this method:
 
 ```php
 $this->loader = new Plugin_Name_Loader();
 ```
 
-Now let's skip down and take a look at `define_public_hooks()`. This is another function that was called from the `__construct()` method earlier. This is a great place to organize hooks used by the plugin. Here's how it looks:
+Now let's skip down and take a look at `define_public_hooks()`. This is another method that was called from the `__construct()` method earlier. This is a great place to organize hooks used by the plugin. Here's how it looks:
 
 ```php
 private function define_public_hooks() {
@@ -134,9 +134,9 @@ private function define_public_hooks() {
 
 - An object of a class is instantiated.
 
-- The loader custom version of add_action() is performed which accepts the object as an argument.
+- The loader custom version of `add_action()` is performed which accepts the object as an argument.
 
-This is where the loader becomes useful for us. Instead of passing just the hook and callback function to `add_action()`, the loader uses it's own custom `add_action()` and `add_filter()` functions which allow us to pass three arguments: *hook*, *class*, and *callback* function. This way it knows how to find the function in your class.
+This is where the loader becomes useful for us. Instead of passing just the hook and callback function to `add_action()`, the loader uses it's own custom `add_action()` and `add_filter()` methods which allow us to pass three arguments: *hook*, *class*, and *callback* function. This way it knows how to find the method in your class.
 
 For reference, here are [all of the arguments](https://github.com/mnestorov/dx-plugin-boilerplate/blob/main/dx-plugin-name/includes/classes/class-plugin-name-loader.php) accepted by the loader's version of `add_action()`:
 
@@ -150,11 +150,11 @@ So now, the second step is done.
 
 ---
 
-While there are ways to pass a class function to the WordPress `add_action()` or `add_filter()`, this is how we do it through the boilerplate's loader.
+While there are ways to pass a class method to the WordPress `add_action()` or `add_filter()`, this is how we do it through the boilerplate's loader.
 
 **Example**
 
-Within the function `define_public_hooks()`, we will repeat the two steps we just examined above. 
+Within the method  `define_public_hooks()`, we will repeat the two steps we just examined above. 
 
 Remember, we can only do this because earlier we required our class file for **Plugin_Name_CPT**.
 
@@ -164,7 +164,7 @@ Remember, we can only do this because earlier we required our class file for **P
 $plugin_cpt = new Plugin_Name_CPT();
 ```
 
-2. Use the loader's `add_action()` to hook a function of `$plugin_cpt`:
+2. Use the loader's `add_action()` to hook a method of `$plugin_cpt`:
 
 ```php
 $this->loader->add_action( 'init', $plugin_cpt, 'dx_cpt_alert_function' );
