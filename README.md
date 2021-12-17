@@ -29,9 +29,8 @@ Terms like **'plugin-name'** and other variations are spread all throughout the 
 For example, if your plugin is named **'dx-example-plugin'** then:
 
 - rename files from **dx-plugin-name** to **dx-example-plugin**
-- **dx-plugin_name** should become **dx-example-plugin**
 - **dx-plugin-name** should become **dx-example-plugin**
-- **dx-Plugin_Name** should become **Dx_Example_Plugin**
+- **Dx_Plugin_Name** should become **Dx_Example_Plugin**
 - **DX_PLUGIN_NAME_** should become **DX_EXAMPLE_PLUGIN_**
 
 It's safe to activate the plugin at this point. Because the DX Plugin Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code.
