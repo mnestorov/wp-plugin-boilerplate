@@ -121,7 +121,7 @@ class Plugin_Name {
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-plugin-name-register-taxonomies.php';
 
-		// Run the loader.
+		// Run the loader
 		$this->loader = new Plugin_Name_Loader();
 	}
 
