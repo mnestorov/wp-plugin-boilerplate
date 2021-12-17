@@ -14,16 +14,14 @@
  */
 class Plugin_Name_Register_Taxonomies {
     /**
-     * Register the `Size` taxonomy
+     * Register the `Size` taxonomy.
      *
      * @return void
      */
     public function register_size_taxonomy() {
-
         /**
          * Taxonomy: Sizes
          */
-
         $labels = array(
             'name'                  => __('Sizes', 'load_plugin_textdomain'),
             'singular_name'         => __('Size', 'load_plugin_textdomain'),
@@ -63,14 +61,13 @@ class Plugin_Name_Register_Taxonomies {
     }
 
     /**
-     * Register `location` taxonomy
+     * Register `location` taxonomy.
      *
      * @return void
     */
     public function register_location_taxonomy() {
-
         /**
-         * Taxonomy: Sizes
+         * Taxonomy: Location
          */
         $labels = array(
             'name'                  => __('Locations', 'load_plugin_textdomain'),

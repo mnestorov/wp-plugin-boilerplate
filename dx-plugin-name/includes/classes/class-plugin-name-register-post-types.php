@@ -14,16 +14,14 @@
  */
 class Plugin_Name_Register_Post_Types {
     /**
-     * Register the `Business` post type
+     * Register the `Business` post type.
      *
      * @return void
      */
     public function register_business_type() {
-
         /**
          * Post Type: Businesses
          */
-
         $labels = array(
             'name'                  => __('Businesses', 'load_plugin_textdomain'),
             'singular_name'         => __('Business', 'load_plugin_textdomain'),
