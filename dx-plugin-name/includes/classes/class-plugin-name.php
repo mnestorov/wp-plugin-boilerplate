@@ -111,8 +111,18 @@ class Plugin_Name {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'classes/class-plugin-name-public.php';
 
-		$this->loader = new Plugin_Name_Loader();
+		/**
+		 * The class responsible for registering all the custom post types that occur in the admin area.
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-plugin-name-register-post-types';
 
+		/**
+		 * The class responsible for registering all the taxonomies that occur in the admin area.
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-plugin-name-register-taxonomies.php';
+
+		// Run the loader
+		$this->loader = new Plugin_Name_Loader();
 	}
 
 	/**
@@ -146,6 +156,18 @@ class Plugin_Name {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		// Instantiate an object of Plugin_Name_Register_Post_Types class.
+		$plugin_cpt = new Plugin_Name_Register_Post_Types();
+
+		// Hook the function from Plugin_Name_Register_Post_Types class to an action or filter
+		$this->loader->add_action('init', $plugin_cpt, 'register_example_type');
+
+		// Instantiate an object of Plugin_Name_Register_Taxonomies class.
+		$plugin_taxonomies = new Plugin_Name_Register_Taxonomies();
+
+		// Hook the function from Plugin_Name_Register_Taxonomies class to an action or filter
+		$this->loader->add_action('init', $plugin_taxonomies, 'register_size_taxonomy');
+		$this->loader->add_action('init', $plugin_taxonomies, 'register_location_taxonomy');
 	}
 
 	/**
