@@ -1,6 +1,8 @@
 # DX Plugin Boilerplate
 
-A standardized, organized, object-oriented foundation for building DX Plugins.
+[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+
+A standardized, organized, object-oriented foundation for building DX  (WordPress) Plugins.
 
 ## Contents
 
@@ -208,8 +210,8 @@ $this->loader->add_action( 'init', $plugin_cpt, 'dx_cpt_alert_function' );
 
 ---
 
-**In retrospect of all of the above, this *Loader* class helps to easily manage hooks throughout the plugin as we're working on our code, and we can trust that everything will be registered with WordPress just as we would expect.**
+**Note:** In retrospect of all of the above, this `Loader` class helps to easily manage hooks throughout the plugin as we're working on our code, and we can trust that everything will be registered with WordPress just as we would expect.**
 
-## Licensing
+## License
 
-// @TODO
+This project is licensed under the GNU General Public License v2.0 License.
