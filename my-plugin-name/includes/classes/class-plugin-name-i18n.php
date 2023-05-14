@@ -6,12 +6,12 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://devrix.com
+ * @link       http://yoursite.com
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes/classes
- * @author     DevriX <contact@devrix.com>
+ * @subpackage Plugin_Name/includes
+ * @author     Your Company <contact@yoursite.com>
  */
 class Plugin_Name_I18n {
 

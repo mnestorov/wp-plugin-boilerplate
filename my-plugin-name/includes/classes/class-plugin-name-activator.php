@@ -5,12 +5,12 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @link       http://devrix.com
+ * @link       http://yoursite.com
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes/classes
- * @author     DevriX <contact@devrix.com>
+ * @subpackage Plugin_Name/includes
+ * @author     Your Company <contact@yoursite.com>
  */
 class Plugin_Name_Activator {
 

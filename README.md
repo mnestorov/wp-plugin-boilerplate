@@ -1,47 +1,52 @@
-# DX Plugin Boilerplate
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/wordpress/wordpress.png" width="100" alt="Laravel Logo"></a></p>
 
-[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+# WordPress Plugin Boilerplate
 
-A standardized, organized, object-oriented foundation for building DX  (WordPress) Plugins.
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
+
+## Overview
+
+A standardized, organized, object-oriented foundation for building WordPress Plugins.
 
 ## Contents
 
-The DX Plugin Boilerplate includes the following files:
+The WordPress Plugin Boilerplate includes the following files:
 
 - **.gitignore** - used to exclude certain files from the repository.
 - **CHANGELOG.md** - the list of changes to the core project.
 - **README.md** - the file that you’re currently reading.
-- **dx-plugin-name** - directory that contains the source code
+- **my-plugin-name** - directory that contains the source code
 
 ## Features
 
-- The DX Plugin Boilerplate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](https://developer.wordpress.org/coding-standards/), and [Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/php/).
+- The WordPress Plugin Boilerplate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](https://developer.wordpress.org/coding-standards/), and [Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/php/).
 - All classes, functions, and variables are documented so that you know what you need to change.
-- The DX Plugin Boilerplate uses a strict file organization scheme and that makes it easy to organize the files that compose the plugin.
+- The WordPress Plugin Boilerplate uses a strict file organization scheme and that makes it easy to organize the files that compose the plugin.
 - The plugin includes a **'.pot'** file as a starting point for internationalization.
 
 ## Installation
 
-The DX Plugin Boilerplate can be installed directly into your plugins folder "as-is". You will want to rename it and the classes inside of it to fit your needs. 
+The WordPress Plugin Boilerplate can be installed directly into your plugins folder "as-is". You will want to rename it and the classes inside of it to fit your needs. 
 
 Terms like **'plugin-name'** and other variations are spread all throughout the file contents as well. You can use VS Code, Sublime Text, Atom.io or other capable text editors to mass-replace within multiple files. 
 
 **Note:** *Here is a list of what you should replace (make sure to do case-sensitive search-replaces).*
 
-For example, if your plugin is named **'dx-example-plugin'** then:
+For example, if your plugin is named **'my-example-plugin'** then:
 
-- rename files from **dx-plugin-name** to **dx-example-plugin**
-- **dx-plugin-name** should become **dx-example-plugin**
-- **Dx_Plugin_Name** should become **Dx_Example_Plugin**
-- **DX_PLUGIN_NAME_** should become **DX_EXAMPLE_PLUGIN_**
+- rename files from **my-plugin-name** to **my-example-plugin**
+- **my-plugin-name** should become **my-example-plugin**
+- **My_Plugin_Name** should become **My_Example_Plugin**
+- **MY_PLUGIN_NAME_** should become **MY_EXAMPLE_PLUGIN_**
 
-It's safe to activate the plugin at this point. Because the DX Plugin Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code.
+It's safe to activate the plugin at this point. Because the WordPress Plugin Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code.
 
 ## Recommended Tools
 
 ### i18n Tools
 
-The DX Plugin Boilerplate uses a variable to store the text domain used when internationalizing strings throughout the Boilerplate. To take advantage of this method, there are tools that are recommended for providing correct, translatable files:
+The WordPress Plugin Boilerplate uses a variable to store the text domain used when internationalizing strings throughout the Boilerplate. To take advantage of this method, there are tools that are recommended for providing correct, translatable files:
 
 - [Poedit](http://www.poedit.net/)
 - [i18n](https://codex.wordpress.org/I18n_for_WordPress_Developers)
@@ -54,10 +59,10 @@ Any of the above tools should provide you with the proper tooling to internation
 
 Note that if you include your own classes, or third-party libraries, there are four locations in which said files may go:
 
-- **dx-plugin-name/includes/functions.php** is where general functions, shortcodes, etc. of the site reside
-- **dx-plugin-name/includes/classes** is where functionality shared between the admin area and the public area parts of the site reside
-- **dx-plugin-name/assets/src/admin** is for all admin-specific scripts and styles
-- **dx-plugin-name/assets/src/public** is for all public-specific scripts and styles
+- **my-plugin-name/includes/functions.php** is where general functions, shortcodes, etc. of the site reside
+- **my-plugin-name/includes/classes** is where functionality shared between the admin area and the public area parts of the site reside
+- **my-plugin-name/assets/src/admin** is for all admin-specific scripts and styles
+- **my-plugin-name/assets/src/public** is for all public-specific scripts and styles
 
 **Note:** *We have the **Loader** class for registering the hooks.*
 
@@ -140,7 +145,7 @@ private function define_public_hooks() {
 
 This is where the loader becomes useful for us. Instead of passing just the hook and callback function to `add_action()`, the loader uses it's own custom `add_action()` and `add_filter()` functions which allow us to pass three arguments: *hook*, *class*, and *callback* function. This way it knows how to find the function in your class.
 
-For reference, here are [all of the arguments](https://github.com/mnestorov/dx-plugin-boilerplate/blob/main/dx-plugin-name/includes/classes/class-plugin-name-loader.php) accepted by the loader's version of `add_action()`:
+For reference, here are [all of the arguments](https://github.com/mnestorov/my-plugin-boilerplate/blob/main/my-plugin-name/includes/classes/class-plugin-name-loader.php) accepted by the loader's version of `add_action()`:
 
 ```php
 public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
@@ -169,7 +174,7 @@ $plugin_cpt = new Plugin_Name_CPT();
 2. Use the loader's `add_action()` to hook a function of `$plugin_cpt`:
 
 ```php
-$this->loader->add_action( 'init', $plugin_cpt, 'dx_cpt_alert_function' );
+$this->loader->add_action( 'init', $plugin_cpt, 'my_cpt_alert_function' );
 ```
 
 That's all. 
@@ -183,7 +188,7 @@ Here is a final checklist to make sure we've done everything we need to:
 ```php
 <?php
 class Plugin_Name_CPT {
-    public function dx_cpt_alert_function() { ?> 
+    public function my_cpt_alert_function() { ?> 
         <script>alert("CPT IS WORKING!");</script> <?php
     }
 }
@@ -205,13 +210,16 @@ $plugin_cpt = new Plugin_Name_CPT();
 4. Lastly, hook the method from our class to an action or filter. We do this within `define_public_hooks()` in the **class-plugin-name.php**.
 
 ```php
-$this->loader->add_action( 'init', $plugin_cpt, 'dx_cpt_alert_function' );
+$this->loader->add_action( 'init', $plugin_cpt, 'my_cpt_alert_function' );
 ```
 
 ---
 
 **Note:** In retrospect of all of the above, this `Loader` class helps to easily manage hooks throughout the plugin as we're working on our code, and we can trust that everything will be registered with WordPress just as we would expect.**
 
+---
+
 ## License
 
-This project is licensed under the GNU General Public License v2.0 License.
+
+This project is licensed under the MIT License.

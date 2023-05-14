@@ -15,11 +15,11 @@
  * This file may be updated more in future version of the Boilerplate; however, this is the
  * general skeleton and outline for how the file should work.
  *
- * @link       http://devrix.com
+ * @link       http://yoursite.com
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @author     DevriX <contact@devrix.com>
+ * @author     Your Company <contact@yoursite.com>
  */
 
 // If uninstall not called from WordPress, then exit.
